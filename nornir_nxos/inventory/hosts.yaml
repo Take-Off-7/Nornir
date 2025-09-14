@@ -1,7 +1,0 @@
-nxos1:
-  hostname: sbx-nxos-mgmt.cisco.com
-  groups:
-    - nxos
-  nxos_server: 10.0.0.1
-  extras:
-    strict_key: False

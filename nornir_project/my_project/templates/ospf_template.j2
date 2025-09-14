@@ -1,0 +1,12 @@
+router ospf {{ OSPF.process_id }}
+ router-id {{ OSPF.rid }}
+{% for num in range(1, 10) %}
+interface Ethernet1/{{ num }}
+  no switchport
+  no spanning-tree port type edge
+  no channel-group
+  no switchport access vlan
+  no switchport mode
+  ip address 192.168.1.{{ num }}/24
+  ip router ospf {{ OSPF.process_id }} area {{ OSPF.area }}
+{% endfor %}

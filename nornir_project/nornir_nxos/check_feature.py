@@ -15,7 +15,7 @@ def check_config(task: Task, feature: str) -> Result:
 
 def main():
     # Initialize Nornir from config.yaml
-    nr = InitNornir(config_file="config.yaml")
+    nr = InitNornir(config_file="../config.yaml")
 
     # Run the task on all hosts
     result = nr.run(task=check_config, feature="nxos")

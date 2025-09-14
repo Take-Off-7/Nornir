@@ -1,0 +1,5 @@
+---
+OSPF:
+  process_id: 1
+  rid: 1.1.1.1
+  area: 0

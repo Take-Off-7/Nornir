@@ -1,0 +1,1474 @@
+2025-09-12 15:05:54,838 -  nornir.core -     INFO -        run() - Running task 'backup_config' with args {} on 3 hosts
+2025-09-12 15:05:54,841 - nornir.core.task -    ERROR -      start() - Host 'iosxr': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/netmiko/ssh_dispatcher.py", line 455, in ConnectHandler
+    raise ValueError(
+ValueError: Unsupported 'device_type' currently supported platforms are: 
+a10
+accedian
+adtran_os
+adva_fsp150f2
+adva_fsp150f3
+alaxala_ax26s
+alaxala_ax36s
+alcatel_aos
+alcatel_sros
+allied_telesis_awplus
+apresia_aeos
+arista_eos
+arris_cer
+aruba_aoscx
+aruba_os
+aruba_osswitch
+aruba_procurve
+asterfusion_asternos
+audiocode_66
+audiocode_72
+audiocode_shell
+avaya_ers
+avaya_vsp
+bintec_boss
+broadcom_icos
+brocade_fastiron
+brocade_fos
+brocade_netiron
+brocade_nos
+brocade_vdx
+brocade_vyos
+calix_b6
+casa_cmts
+cdot_cros
+centec_os
+checkpoint_gaia
+ciena_saos
+ciena_saos10
+ciena_waveserver
+cisco_apic
+cisco_asa
+cisco_ftd
+cisco_ios
+cisco_nxos
+cisco_s200
+cisco_s300
+cisco_tp
+cisco_viptela
+cisco_wlc
+cisco_xe
+cisco_xr
+cloudgenix_ion
+corelight_linux
+coriant
+cumulus_linux
+dell_dnos9
+dell_force10
+dell_isilon
+dell_os10
+dell_os6
+dell_os9
+dell_powerconnect
+dell_sonic
+digi_transport
+dlink_ds
+edgecore_sonic
+ekinops_ek360
+eltex
+eltex_esr
+endace
+enterasys
+ericsson_ipos
+ericsson_mltn63
+ericsson_mltn66
+extreme
+extreme_ers
+extreme_exos
+extreme_netiron
+extreme_nos
+extreme_slx
+extreme_tierra
+extreme_vdx
+extreme_vsp
+extreme_wing
+f5_linux
+f5_ltm
+f5_tmsh
+fiberstore_fsos
+fiberstore_fsosv2
+fiberstore_networkos
+flexvnf
+fortinet
+garderos_grs
+generic
+generic_termserver
+h3c_comware
+hillstone_stoneos
+hp_comware
+hp_procurve
+huawei
+huawei_olt
+huawei_smartax
+huawei_smartaxmmi
+huawei_vrp
+huawei_vrpv8
+infinera_packet
+ipinfusion_ocnos
+juniper
+juniper_junos
+juniper_screenos
+keymile
+keymile_nos
+lancom_lcossx4
+linux
+maipu
+mellanox
+mellanox_mlnxos
+mikrotik_routeros
+mikrotik_switchos
+mrv_lx
+mrv_optiswitch
+nec_ix
+netapp_cdot
+netgear_prosafe
+netscaler
+nokia_srl
+nokia_sros
+oneaccess_oneos
+ovs_linux
+paloalto_panos
+pluribus
+quanta_mesh
+rad_etx
+raisecom_roap
+ruckus_fastiron
+ruijie_os
+silverpeak_vxoa
+sixwind_os
+sophos_sfos
+supermicro_smis
+telcosystems_binos
+teldat_cit
+tplink_jetstream
+ubiquiti_edge
+ubiquiti_edgerouter
+ubiquiti_edgeswitch
+ubiquiti_unifiswitch
+vertiv_mph
+vyatta_vyos
+vyos
+watchguard_fireware
+yamaha
+zte_zxros
+zyxel_os
+
+2025-09-12 15:05:54,841 - nornir.core.task -    ERROR -      start() - Host 'nexus9k': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/netmiko/ssh_dispatcher.py", line 449, in ConnectHandler
+    device_type = kwargs["device_type"]
+                  ~~~~~~^^^^^^^^^^^^^^^
+KeyError: 'device_type'
+
+2025-09-12 15:05:54,842 - nornir.core.task -    ERROR -      start() - Host 'cat8k': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/netmiko/ssh_dispatcher.py", line 455, in ConnectHandler
+    raise ValueError(
+ValueError: Unsupported 'device_type' currently supported platforms are: 
+a10
+accedian
+adtran_os
+adva_fsp150f2
+adva_fsp150f3
+alaxala_ax26s
+alaxala_ax36s
+alcatel_aos
+alcatel_sros
+allied_telesis_awplus
+apresia_aeos
+arista_eos
+arris_cer
+aruba_aoscx
+aruba_os
+aruba_osswitch
+aruba_procurve
+asterfusion_asternos
+audiocode_66
+audiocode_72
+audiocode_shell
+avaya_ers
+avaya_vsp
+bintec_boss
+broadcom_icos
+brocade_fastiron
+brocade_fos
+brocade_netiron
+brocade_nos
+brocade_vdx
+brocade_vyos
+calix_b6
+casa_cmts
+cdot_cros
+centec_os
+checkpoint_gaia
+ciena_saos
+ciena_saos10
+ciena_waveserver
+cisco_apic
+cisco_asa
+cisco_ftd
+cisco_ios
+cisco_nxos
+cisco_s200
+cisco_s300
+cisco_tp
+cisco_viptela
+cisco_wlc
+cisco_xe
+cisco_xr
+cloudgenix_ion
+corelight_linux
+coriant
+cumulus_linux
+dell_dnos9
+dell_force10
+dell_isilon
+dell_os10
+dell_os6
+dell_os9
+dell_powerconnect
+dell_sonic
+digi_transport
+dlink_ds
+edgecore_sonic
+ekinops_ek360
+eltex
+eltex_esr
+endace
+enterasys
+ericsson_ipos
+ericsson_mltn63
+ericsson_mltn66
+extreme
+extreme_ers
+extreme_exos
+extreme_netiron
+extreme_nos
+extreme_slx
+extreme_tierra
+extreme_vdx
+extreme_vsp
+extreme_wing
+f5_linux
+f5_ltm
+f5_tmsh
+fiberstore_fsos
+fiberstore_fsosv2
+fiberstore_networkos
+flexvnf
+fortinet
+garderos_grs
+generic
+generic_termserver
+h3c_comware
+hillstone_stoneos
+hp_comware
+hp_procurve
+huawei
+huawei_olt
+huawei_smartax
+huawei_smartaxmmi
+huawei_vrp
+huawei_vrpv8
+infinera_packet
+ipinfusion_ocnos
+juniper
+juniper_junos
+juniper_screenos
+keymile
+keymile_nos
+lancom_lcossx4
+linux
+maipu
+mellanox
+mellanox_mlnxos
+mikrotik_routeros
+mikrotik_switchos
+mrv_lx
+mrv_optiswitch
+nec_ix
+netapp_cdot
+netgear_prosafe
+netscaler
+nokia_srl
+nokia_sros
+oneaccess_oneos
+ovs_linux
+paloalto_panos
+pluribus
+quanta_mesh
+rad_etx
+raisecom_roap
+ruckus_fastiron
+ruijie_os
+silverpeak_vxoa
+sixwind_os
+sophos_sfos
+supermicro_smis
+telcosystems_binos
+teldat_cit
+tplink_jetstream
+ubiquiti_edge
+ubiquiti_edgerouter
+ubiquiti_edgeswitch
+ubiquiti_unifiswitch
+vertiv_mph
+vyatta_vyos
+vyos
+watchguard_fireware
+yamaha
+zte_zxros
+zyxel_os
+
+2025-09-12 15:05:54,842 - nornir.core.task -    ERROR -      start() - Host 'iosxr': task 'backup_config' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_project/nornir_iosxe/backupscript.py", line 13, in backup_config
+    result = task.run(task=netmiko_send_command, command_string="show running-config")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2025-09-12 15:05:54,842 - nornir.core.task -    ERROR -      start() - Host 'nexus9k': task 'backup_config' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_project/nornir_iosxe/backupscript.py", line 13, in backup_config
+    result = task.run(task=netmiko_send_command, command_string="show running-config")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2025-09-12 15:05:54,843 - nornir.core.task -    ERROR -      start() - Host 'cat8k': task 'backup_config' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_project/nornir_iosxe/backupscript.py", line 13, in backup_config
+    result = task.run(task=netmiko_send_command, command_string="show running-config")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2025-09-12 15:06:56,807 -  nornir.core -     INFO -        run() - Running task 'backup_config' with args {} on 3 hosts
+2025-09-12 15:06:56,810 - nornir.core.task -    ERROR -      start() - Host 'nexus9k': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/netmiko/ssh_dispatcher.py", line 449, in ConnectHandler
+    device_type = kwargs["device_type"]
+                  ~~~~~~^^^^^^^^^^^^^^^
+KeyError: 'device_type'
+
+2025-09-12 15:06:56,810 - nornir.core.task -    ERROR -      start() - Host 'nexus9k': task 'backup_config' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_project/nornir_iosxe/backupscript.py", line 13, in backup_config
+    result = task.run(task=netmiko_send_command, command_string="show running-config")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2025-09-12 15:06:56,811 - nornir.core.task -    ERROR -      start() - Host 'cat8k': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/netmiko/ssh_dispatcher.py", line 455, in ConnectHandler
+    raise ValueError(
+ValueError: Unsupported 'device_type' currently supported platforms are: 
+a10
+accedian
+adtran_os
+adva_fsp150f2
+adva_fsp150f3
+alaxala_ax26s
+alaxala_ax36s
+alcatel_aos
+alcatel_sros
+allied_telesis_awplus
+apresia_aeos
+arista_eos
+arris_cer
+aruba_aoscx
+aruba_os
+aruba_osswitch
+aruba_procurve
+asterfusion_asternos
+audiocode_66
+audiocode_72
+audiocode_shell
+avaya_ers
+avaya_vsp
+bintec_boss
+broadcom_icos
+brocade_fastiron
+brocade_fos
+brocade_netiron
+brocade_nos
+brocade_vdx
+brocade_vyos
+calix_b6
+casa_cmts
+cdot_cros
+centec_os
+checkpoint_gaia
+ciena_saos
+ciena_saos10
+ciena_waveserver
+cisco_apic
+cisco_asa
+cisco_ftd
+cisco_ios
+cisco_nxos
+cisco_s200
+cisco_s300
+cisco_tp
+cisco_viptela
+cisco_wlc
+cisco_xe
+cisco_xr
+cloudgenix_ion
+corelight_linux
+coriant
+cumulus_linux
+dell_dnos9
+dell_force10
+dell_isilon
+dell_os10
+dell_os6
+dell_os9
+dell_powerconnect
+dell_sonic
+digi_transport
+dlink_ds
+edgecore_sonic
+ekinops_ek360
+eltex
+eltex_esr
+endace
+enterasys
+ericsson_ipos
+ericsson_mltn63
+ericsson_mltn66
+extreme
+extreme_ers
+extreme_exos
+extreme_netiron
+extreme_nos
+extreme_slx
+extreme_tierra
+extreme_vdx
+extreme_vsp
+extreme_wing
+f5_linux
+f5_ltm
+f5_tmsh
+fiberstore_fsos
+fiberstore_fsosv2
+fiberstore_networkos
+flexvnf
+fortinet
+garderos_grs
+generic
+generic_termserver
+h3c_comware
+hillstone_stoneos
+hp_comware
+hp_procurve
+huawei
+huawei_olt
+huawei_smartax
+huawei_smartaxmmi
+huawei_vrp
+huawei_vrpv8
+infinera_packet
+ipinfusion_ocnos
+juniper
+juniper_junos
+juniper_screenos
+keymile
+keymile_nos
+lancom_lcossx4
+linux
+maipu
+mellanox
+mellanox_mlnxos
+mikrotik_routeros
+mikrotik_switchos
+mrv_lx
+mrv_optiswitch
+nec_ix
+netapp_cdot
+netgear_prosafe
+netscaler
+nokia_srl
+nokia_sros
+oneaccess_oneos
+ovs_linux
+paloalto_panos
+pluribus
+quanta_mesh
+rad_etx
+raisecom_roap
+ruckus_fastiron
+ruijie_os
+silverpeak_vxoa
+sixwind_os
+sophos_sfos
+supermicro_smis
+telcosystems_binos
+teldat_cit
+tplink_jetstream
+ubiquiti_edge
+ubiquiti_edgerouter
+ubiquiti_edgeswitch
+ubiquiti_unifiswitch
+vertiv_mph
+vyatta_vyos
+vyos
+watchguard_fireware
+yamaha
+zte_zxros
+zyxel_os
+
+2025-09-12 15:06:56,811 - nornir.core.task -    ERROR -      start() - Host 'iosxr': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/netmiko/ssh_dispatcher.py", line 455, in ConnectHandler
+    raise ValueError(
+ValueError: Unsupported 'device_type' currently supported platforms are: 
+a10
+accedian
+adtran_os
+adva_fsp150f2
+adva_fsp150f3
+alaxala_ax26s
+alaxala_ax36s
+alcatel_aos
+alcatel_sros
+allied_telesis_awplus
+apresia_aeos
+arista_eos
+arris_cer
+aruba_aoscx
+aruba_os
+aruba_osswitch
+aruba_procurve
+asterfusion_asternos
+audiocode_66
+audiocode_72
+audiocode_shell
+avaya_ers
+avaya_vsp
+bintec_boss
+broadcom_icos
+brocade_fastiron
+brocade_fos
+brocade_netiron
+brocade_nos
+brocade_vdx
+brocade_vyos
+calix_b6
+casa_cmts
+cdot_cros
+centec_os
+checkpoint_gaia
+ciena_saos
+ciena_saos10
+ciena_waveserver
+cisco_apic
+cisco_asa
+cisco_ftd
+cisco_ios
+cisco_nxos
+cisco_s200
+cisco_s300
+cisco_tp
+cisco_viptela
+cisco_wlc
+cisco_xe
+cisco_xr
+cloudgenix_ion
+corelight_linux
+coriant
+cumulus_linux
+dell_dnos9
+dell_force10
+dell_isilon
+dell_os10
+dell_os6
+dell_os9
+dell_powerconnect
+dell_sonic
+digi_transport
+dlink_ds
+edgecore_sonic
+ekinops_ek360
+eltex
+eltex_esr
+endace
+enterasys
+ericsson_ipos
+ericsson_mltn63
+ericsson_mltn66
+extreme
+extreme_ers
+extreme_exos
+extreme_netiron
+extreme_nos
+extreme_slx
+extreme_tierra
+extreme_vdx
+extreme_vsp
+extreme_wing
+f5_linux
+f5_ltm
+f5_tmsh
+fiberstore_fsos
+fiberstore_fsosv2
+fiberstore_networkos
+flexvnf
+fortinet
+garderos_grs
+generic
+generic_termserver
+h3c_comware
+hillstone_stoneos
+hp_comware
+hp_procurve
+huawei
+huawei_olt
+huawei_smartax
+huawei_smartaxmmi
+huawei_vrp
+huawei_vrpv8
+infinera_packet
+ipinfusion_ocnos
+juniper
+juniper_junos
+juniper_screenos
+keymile
+keymile_nos
+lancom_lcossx4
+linux
+maipu
+mellanox
+mellanox_mlnxos
+mikrotik_routeros
+mikrotik_switchos
+mrv_lx
+mrv_optiswitch
+nec_ix
+netapp_cdot
+netgear_prosafe
+netscaler
+nokia_srl
+nokia_sros
+oneaccess_oneos
+ovs_linux
+paloalto_panos
+pluribus
+quanta_mesh
+rad_etx
+raisecom_roap
+ruckus_fastiron
+ruijie_os
+silverpeak_vxoa
+sixwind_os
+sophos_sfos
+supermicro_smis
+telcosystems_binos
+teldat_cit
+tplink_jetstream
+ubiquiti_edge
+ubiquiti_edgerouter
+ubiquiti_edgeswitch
+ubiquiti_unifiswitch
+vertiv_mph
+vyatta_vyos
+vyos
+watchguard_fireware
+yamaha
+zte_zxros
+zyxel_os
+
+2025-09-12 15:06:56,812 - nornir.core.task -    ERROR -      start() - Host 'cat8k': task 'backup_config' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_project/nornir_iosxe/backupscript.py", line 13, in backup_config
+    result = task.run(task=netmiko_send_command, command_string="show running-config")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2025-09-12 15:06:56,812 - nornir.core.task -    ERROR -      start() - Host 'iosxr': task 'backup_config' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_project/nornir_iosxe/backupscript.py", line 13, in backup_config
+    result = task.run(task=netmiko_send_command, command_string="show running-config")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2025-09-12 15:10:17,554 -  nornir.core -     INFO -        run() - Running task 'backup_config' with args {} on 3 hosts
+2025-09-12 15:10:17,556 - nornir.core.task -    ERROR -      start() - Host 'nexus9k': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/netmiko/ssh_dispatcher.py", line 449, in ConnectHandler
+    device_type = kwargs["device_type"]
+                  ~~~~~~^^^^^^^^^^^^^^^
+KeyError: 'device_type'
+
+2025-09-12 15:10:17,557 - nornir.core.task -    ERROR -      start() - Host 'nexus9k': task 'backup_config' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_project/nornir_iosxe/backupscript.py", line 13, in backup_config
+    result = task.run(task=netmiko_send_command, command_string="show running-config")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2025-09-12 15:10:27,571 - nornir.core.task -    ERROR -      start() - Host 'iosxr': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/netmiko/base_connection.py", line 1146, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/paramiko/client.py", line 384, in connect
+    sock.connect(addr)
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/netmiko/ssh_dispatcher.py", line 460, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/netmiko/base_connection.py", line 495, in __init__
+    self._open()
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/netmiko/base_connection.py", line 500, in _open
+    self.establish_connection()
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/netmiko/cisco/cisco_xr.py", line 11, in establish_connection
+    super().establish_connection(width=width, height=height)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/netmiko/base_connection.py", line 1168, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_xr 10.10.20.35:22
+
+
+
+2025-09-12 15:10:27,571 - nornir.core.task -    ERROR -      start() - Host 'cat8k': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/netmiko/base_connection.py", line 1146, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/paramiko/client.py", line 384, in connect
+    sock.connect(addr)
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/netmiko/ssh_dispatcher.py", line 460, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/netmiko/base_connection.py", line 495, in __init__
+    self._open()
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/netmiko/base_connection.py", line 500, in _open
+    self.establish_connection()
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/netmiko/base_connection.py", line 1168, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.10.20.48:22
+
+
+
+2025-09-12 15:10:27,572 - nornir.core.task -    ERROR -      start() - Host 'iosxr': task 'backup_config' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_project/nornir_iosxe/backupscript.py", line 13, in backup_config
+    result = task.run(task=netmiko_send_command, command_string="show running-config")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2025-09-12 15:10:27,572 - nornir.core.task -    ERROR -      start() - Host 'cat8k': task 'backup_config' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_project/nornir_iosxe/backupscript.py", line 13, in backup_config
+    result = task.run(task=netmiko_send_command, command_string="show running-config")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2025-09-12 15:29:36,034 -  nornir.core -     INFO -        run() - Running task 'backup_config' with args {} on 3 hosts
+2025-09-12 15:29:46,053 - nornir.core.task -    ERROR -      start() - Host 'nexus9k': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/netmiko/base_connection.py", line 1146, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/paramiko/client.py", line 384, in connect
+    sock.connect(addr)
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/netmiko/ssh_dispatcher.py", line 460, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/netmiko/base_connection.py", line 495, in __init__
+    self._open()
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/netmiko/base_connection.py", line 500, in _open
+    self.establish_connection()
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/netmiko/base_connection.py", line 1168, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_nxos 10.10.20.40:22
+
+
+
+2025-09-12 15:29:46,053 - nornir.core.task -    ERROR -      start() - Host 'iosxr': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/netmiko/base_connection.py", line 1146, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/paramiko/client.py", line 384, in connect
+    sock.connect(addr)
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/netmiko/ssh_dispatcher.py", line 460, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/netmiko/base_connection.py", line 495, in __init__
+    self._open()
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/netmiko/base_connection.py", line 500, in _open
+    self.establish_connection()
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/netmiko/cisco/cisco_xr.py", line 11, in establish_connection
+    super().establish_connection(width=width, height=height)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/netmiko/base_connection.py", line 1168, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_xr 10.10.20.35:22
+
+
+
+2025-09-12 15:29:46,054 - nornir.core.task -    ERROR -      start() - Host 'nexus9k': task 'backup_config' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_project/nornir_iosxe/backupscript.py", line 13, in backup_config
+    result = task.run(task=netmiko_send_command, command_string="show running-config")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2025-09-12 15:29:46,054 - nornir.core.task -    ERROR -      start() - Host 'cat8k': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/netmiko/base_connection.py", line 1146, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/paramiko/client.py", line 384, in connect
+    sock.connect(addr)
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/netmiko/ssh_dispatcher.py", line 460, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/netmiko/base_connection.py", line 495, in __init__
+    self._open()
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/netmiko/base_connection.py", line 500, in _open
+    self.establish_connection()
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/netmiko/base_connection.py", line 1168, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.10.20.48:22
+
+
+
+2025-09-12 15:29:46,054 - nornir.core.task -    ERROR -      start() - Host 'iosxr': task 'backup_config' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_project/nornir_iosxe/backupscript.py", line 13, in backup_config
+    result = task.run(task=netmiko_send_command, command_string="show running-config")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2025-09-12 15:29:46,055 - nornir.core.task -    ERROR -      start() - Host 'cat8k': task 'backup_config' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_project/nornir_iosxe/backupscript.py", line 13, in backup_config
+    result = task.run(task=netmiko_send_command, command_string="show running-config")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2025-09-14 01:23:11,504 -  nornir.core -     INFO -        run() - Running task 'backup_configuration' with args {} on 1 hosts
+2025-09-14 01:23:11,506 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'Backup Configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: send_configs() got an unexpected keyword argument 'config'
+
+2025-09-14 01:23:11,507 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'backup_configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_project/my_project/backupscript.py", line 21, in backup_configuration
+    r = task.run(task=send_configs, name="Backup Configuration", config=cmd)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Backup Configuration (failed)
+
+
+2025-09-14 01:25:56,521 -  nornir.core -     INFO -        run() - Running task 'backup_configurations' with args {} on 1 hosts
+2025-09-14 01:26:00,264 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'write_file' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: write_file() got an unexpected keyword argument 'file'
+
+2025-09-14 01:26:00,264 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'backup_configurations' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_project/my_project/backupscript.py", line 23, in backup_configurations
+    task.run(task=write_file, content=r.result, file=f"{command_dir}/{task.host}.txt")
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: write_file (failed)
+
+
+2025-09-14 01:27:43,720 -  nornir.core -     INFO -        run() - Running task 'backup_configurations' with args {} on 1 hosts
+2025-09-14 01:27:47,380 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'write_file' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: write_file() got an unexpected keyword argument 'file'
+
+2025-09-14 01:27:47,380 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'backup_configurations' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_project/my_project/backupscript.py", line 23, in backup_configurations
+    task.run(task=write_file, content=r.result, file=f"{command_dir}/{task.host}.txt")
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: write_file (failed)
+
+
+2025-09-14 01:31:28,524 -  nornir.core -     INFO -        run() - Running task 'backup_configurations' with args {} on 1 hosts
+2025-09-14 01:31:33,611 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'backup_configurations' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_project/my_project/backupscript.py", line 21, in backup_configurations
+    r = task.run(task=send_command, name=f"Run {cmd}", command=cmd)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Run show ip protocols (failed)
+
+
+2025-09-14 01:31:48,480 -  nornir.core -     INFO -        run() - Running task 'backup_configurations' with args {} on 1 hosts
+2025-09-14 01:32:08,844 -  nornir.core -     INFO -        run() - Running task 'backup_configurations' with args {} on 1 hosts
+2025-09-14 01:32:14,437 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'backup_configurations' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_project/my_project/backupscript.py", line 21, in backup_configurations
+    r = task.run(task=send_command, name=f"Run {cmd}", command=cmd)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Run show ip protocol (failed)
+
+
+2025-09-14 02:19:05,919 -  nornir.core -     INFO -        run() - Running task 'load_ospf_vars' with args {} on 1 hosts
+2025-09-14 02:19:05,921 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'load_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_utils/plugins/tasks/data/load_yaml.py", line 24, in load_yaml
+    with open(file, "r") as f:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: './templates/ospf_vars.yaml'
+
+2025-09-14 02:19:05,921 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'load_ospf_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_project/my_project/ospf_config.py", line 11, in load_ospf_vars
+    data = task.run(task=load_yaml, file="./templates/ospf_vars.yaml")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: load_yaml (failed)
+
+
+2025-09-14 02:19:50,320 -  nornir.core -     INFO -        run() - Running task 'load_ospf_vars' with args {} on 1 hosts
+2025-09-14 02:19:50,322 -  nornir.core -     INFO -        run() - Running task 'render_ospf_config' with args {} on 1 hosts
+2025-09-14 02:19:50,329 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'render_ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_project/my_project/ospf_config.py", line 16, in render_ospf_config
+    template = env.get_template("ospf_template.j2")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/jinja2/environment.py", line 771, in compile
+    self.handle_exception(source=source_hint)
+  File "/home/codespace/.local/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/ospf_template.j2", line 5, in template
+    {% endfor $}
+jinja2.exceptions.TemplateSyntaxError: unexpected char '$' at 174
+
+2025-09-14 02:23:16,542 -  nornir.core -     INFO -        run() - Running task 'load_ospf_vars' with args {} on 1 hosts
+2025-09-14 02:23:16,544 -  nornir.core -     INFO -        run() - Running task 'render_ospf_config' with args {} on 1 hosts
+2025-09-14 02:23:16,549 -  nornir.core -     INFO -        run() - Running task 'print_ospf_config' with args {} on 1 hosts
+2025-09-14 02:23:16,550 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'print_ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_project/my_project/ospf_config.py", line 24, in print_ospf_config
+    print(ospf_config=task.host["ospf_config"])
+TypeError: 'ospf_config' is an invalid keyword argument for print()
+
+2025-09-14 02:28:38,007 -  nornir.core -     INFO -        run() - Running task 'load_ospf_vars' with args {} on 1 hosts
+2025-09-14 02:28:38,008 -  nornir.core -     INFO -        run() - Running task 'render_ospf_config' with args {} on 1 hosts
+2025-09-14 02:28:38,012 -  nornir.core -     INFO -        run() - Running task 'print_ospf_config' with args {} on 1 hosts
+2025-09-14 02:28:38,012 -  nornir.core -     INFO -        run() - Running task 'push_ospf_config' with args {} on 1 hosts
+2025-09-14 02:28:43,797 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'push_ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_project/my_project/ospf_config.py", line 30, in push_ospf_config
+    result = task.run(task=send_configs, configs=ospf_config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs (failed)
+
+
+2025-09-14 02:32:35,718 -  nornir.core -     INFO -        run() - Running task 'load_ospf_vars' with args {} on 1 hosts
+2025-09-14 02:32:35,719 -  nornir.core -     INFO -        run() - Running task 'render_ospf_config' with args {} on 1 hosts
+2025-09-14 02:32:35,723 -  nornir.core -     INFO -        run() - Running task 'print_ospf_config' with args {} on 1 hosts
+2025-09-14 02:32:35,723 -  nornir.core -     INFO -        run() - Running task 'push_ospf_config' with args {} on 1 hosts
+2025-09-14 02:39:53,001 -  nornir.core -     INFO -        run() - Running task 'load_ospf_vars' with args {} on 1 hosts
+2025-09-14 02:39:53,002 -  nornir.core -     INFO -        run() - Running task 'render_ospf_config' with args {} on 1 hosts
+2025-09-14 02:39:53,005 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'render_ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_project/my_project/ospf_config.py", line 16, in render_ospf_config
+    template = env.get_template("ospf_template.j2")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/jinja2/environment.py", line 771, in compile
+    self.handle_exception(source=source_hint)
+  File "/home/codespace/.local/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/ospf_template.j2", line 5, in template
+    ip ospf {{ OSPF.process_id }} area {{ OSPF.area }}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'endfor' or 'else'. The innermost block that needs to be closed is 'for'.
+
+2025-09-14 02:43:42,524 -  nornir.core -     INFO -        run() - Running task 'load_ospf_vars' with args {} on 1 hosts
+2025-09-14 02:43:42,525 -  nornir.core -     INFO -        run() - Running task 'render_ospf_config' with args {} on 1 hosts
+2025-09-14 02:43:42,529 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'render_ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_project/my_project/ospf_config.py", line 16, in render_ospf_config
+    template = env.get_template("ospf_template.j2")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/jinja2/environment.py", line 771, in compile
+    self.handle_exception(source=source_hint)
+  File "/home/codespace/.local/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/ospf_template.j2", line 5, in template
+    ip router ospf {{ OSPF.process_id }} area {{ OSPF.area }}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'endfor' or 'else'. The innermost block that needs to be closed is 'for'.
+
+2025-09-14 02:47:31,758 -  nornir.core -     INFO -        run() - Running task 'load_ospf_vars' with args {} on 1 hosts
+2025-09-14 02:47:31,759 -  nornir.core -     INFO -        run() - Running task 'render_ospf_config' with args {} on 1 hosts
+2025-09-14 02:47:31,762 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'render_ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_project/my_project/ospf_config.py", line 16, in render_ospf_config
+    template = env.get_template("ospf_template.j2")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/jinja2/environment.py", line 771, in compile
+    self.handle_exception(source=source_hint)
+  File "/home/codespace/.local/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/ospf_template.j2", line 7, in template
+    ip router ospf {{ OSPF.process_id }} area {{ OSPF.area }}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'endfor' or 'else'. The innermost block that needs to be closed is 'for'.
+
+2025-09-14 02:50:46,171 -  nornir.core -     INFO -        run() - Running task 'load_ospf_vars' with args {} on 1 hosts
+2025-09-14 02:50:46,172 -  nornir.core -     INFO -        run() - Running task 'render_ospf_config' with args {} on 1 hosts
+2025-09-14 02:50:46,178 -  nornir.core -     INFO -        run() - Running task 'print_ospf_config' with args {} on 1 hosts
+2025-09-14 02:50:46,179 -  nornir.core -     INFO -        run() - Running task 'push_ospf_config' with args {} on 1 hosts
+2025-09-14 02:51:15,925 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'push_ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_project/my_project/ospf_config.py", line 30, in push_ospf_config
+    result = task.run(task=send_configs, configs=ospf_config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs (failed)
+
+
+2025-09-14 02:51:22,000 -  nornir.core -     INFO -        run() - Running task 'load_ospf_vars' with args {} on 1 hosts
+2025-09-14 02:51:22,001 -  nornir.core -     INFO -        run() - Running task 'render_ospf_config' with args {} on 1 hosts
+2025-09-14 02:51:22,004 -  nornir.core -     INFO -        run() - Running task 'print_ospf_config' with args {} on 1 hosts
+2025-09-14 02:51:22,004 -  nornir.core -     INFO -        run() - Running task 'push_ospf_config' with args {} on 1 hosts
+2025-09-14 02:51:24,063 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'send_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_scrapli/tasks/core/send_configs.py", line 59, in send_configs
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_scrapli/connection.py", line 106, in open
+    connection.open()
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/driver/base/sync_driver.py", line 106, in open
+    self.channel.channel_authenticate_ssh(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/channel/sync_channel.py", line 294, in channel_authenticate_ssh
+    buf = self.read()
+          ^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/channel/sync_channel.py", line 71, in read
+    buf = self.transport.read()
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 107, in _multiprocessing_timeout
+    future = pool.submit(wrapped_func, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/thread.py", line 172, in submit
+    raise RuntimeError('cannot schedule new futures after '
+RuntimeError: cannot schedule new futures after interpreter shutdown
+
+2025-09-14 02:51:24,064 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'push_ospf_config' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_project/my_project/ospf_config.py", line 30, in push_ospf_config
+    result = task.run(task=send_configs, configs=ospf_config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs (failed)
+
+

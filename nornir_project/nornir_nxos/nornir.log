@@ -1,0 +1,123 @@
+2025-09-12 14:24:17,255 -  nornir.core -     INFO -        run() - Running task 'backup_config' with args {} on 1 hosts
+2025-09-12 14:25:26,213 -  nornir.core -     INFO -        run() - Running task 'check_config' with args {'feature': 'nxos'} on 1 hosts
+2025-09-12 14:26:59,108 -  nornir.core -     INFO -        run() - Running task 'show_version' with args {} on 1 hosts
+2025-09-12 14:26:59,111 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_napalm/plugins/connections/__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/napalm/base/__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco_nxos". Is the library installed?
+
+2025-09-12 14:26:59,111 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'show_version' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_project/nornir_nxos/napalm_facts.py", line 9, in show_version
+    result = task.run(
+             ^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_get (failed)
+
+
+2025-09-12 14:28:13,026 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show version'} on 1 hosts
+2025-09-12 14:29:45,295 -  nornir.core -     INFO -        run() - Running task 'check_config' with args {'feature': 'nxos'} on 1 hosts
+2025-09-12 14:30:29,817 -  nornir.core -     INFO -        run() - Running task 'show_version' with args {} on 1 hosts
+2025-09-12 14:30:33,325 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'show_version' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_project/nornir_nxos/show_interfaces.py", line 9, in show_version
+    response = task.run(task=send_command, command="show interfaces")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2025-09-12 14:31:44,909 -  nornir.core -     INFO -        run() - Running task 'show_protocols' with args {} on 1 hosts
+2025-09-12 14:31:48,178 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'show_protocols' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_project/nornir_nxos/show_interfaces.py", line 9, in show_protocols
+    response = task.run(task=send_command, command="show protocols")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2025-09-12 14:32:07,243 -  nornir.core -     INFO -        run() - Running task 'show_protocols' with args {} on 1 hosts
+2025-09-12 14:32:07,245 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'send_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: send_commands() got an unexpected keyword argument 'command'
+
+2025-09-12 14:32:07,245 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'show_protocols' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_project/nornir_nxos/show_interfaces.py", line 9, in show_protocols
+    response = task.run(task=send_commands, command="show protocols")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_commands (failed)
+
+
+2025-09-14 00:54:12,373 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show version'} on 1 hosts
+2025-09-14 00:54:12,376 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/netmiko/ssh_dispatcher.py", line 449, in ConnectHandler
+    device_type = kwargs["device_type"]
+                  ~~~~~~^^^^^^^^^^^^^^^
+KeyError: 'device_type'
+
+2025-09-14 00:54:30,500 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show version'} on 1 hosts
+2025-09-14 00:56:20,960 -  nornir.core -     INFO -        run() - Running task 'show_interfaces' with args {} on 1 hosts
+2025-09-14 00:56:25,009 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'show_interfaces' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_project/nornir_nxos/show_interfaces.py", line 9, in show_interfaces
+    response = task.run(task=send_command, command="show interfaces")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2025-09-14 00:57:33,201 -  nornir.core -     INFO -        run() - Running task 'show_interface' with args {} on 1 hosts

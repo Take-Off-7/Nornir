@@ -1,0 +1,580 @@
+2025-09-10 10:07:22,273 -  nornir.core -     INFO -        run() - Running task 'push_baseconfig' with args {} on 1 hosts
+2025-09-10 10:07:44,874 -  nornir.core -     INFO -        run() - Running task 'push_baseconfig' with args {} on 1 hosts
+2025-09-10 10:09:56,669 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show run'} on 1 hosts
+2025-09-10 10:56:34,881 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2025-09-10 10:58:48,870 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2025-09-10 11:00:31,713 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2025-09-10 11:14:30,112 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2025-09-10 11:14:30,120 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/codespace/.local/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/bgp.j2", line 3, in top-level template code
+    neighbor {{ neighbor["neighbor"] }}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'neighbor'
+
+2025-09-10 11:14:30,121 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_nxos/data_center/bgp_config.py", line 12, in load_vars
+    push_ospf(task)
+  File "/workspaces/Nornir/nornir_nxos/data_center/bgp_config.py", line 15, in push_ospf
+    template = task.run(task=template_file, template="bgp.j2", path="templates")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-09-10 11:14:48,470 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2025-09-10 11:14:57,429 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'send_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/transport/plugins/system/ptyprocess.py", line 520, in read
+    s = self.fileobj.read1(size)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/transport/plugins/system/transport.py", line 179, in read
+    buf = self.session.read(65535)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/transport/plugins/system/ptyprocess.py", line 525, in read
+    raise EOFError("End Of File (EOF). Exception style platform.")
+EOFError: End Of File (EOF). Exception style platform.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_scrapli/tasks/core/send_configs.py", line 69, in send_configs
+    scrapli_response = scrapli_conn.send_configs(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/driver/network/sync_driver.py", line 540, in send_configs
+    responses = super().send_commands(
+                ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/driver/generic/sync_driver.py", line 251, in send_commands
+    response = self._send_command(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 307, in decorate
+    result = wrapped_func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/driver/generic/sync_driver.py", line 167, in _send_command
+    raw_response, processed_response = self.channel.send_input(
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/channel/sync_channel.py", line 510, in send_input
+    buf += self._read_until_prompt()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/channel/sync_channel.py", line 146, in _read_until_prompt
+    read_buf.write(self.read())
+                   ^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/channel/sync_channel.py", line 71, in read
+    buf = self.transport.read()
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/transport/plugins/system/transport.py", line 186, in read
+    raise ScrapliConnectionError(msg) from exc
+scrapli.exceptions.ScrapliConnectionError: encountered EOF reading from transport; typically means the device closed the connection
+
+2025-09-10 11:14:57,430 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_nxos/data_center/bgp_config.py", line 12, in load_vars
+    push_ospf(task)
+  File "/workspaces/Nornir/nornir_nxos/data_center/bgp_config.py", line 21, in push_ospf
+    task.run(task=send_configs, configs=configuration)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs (failed)
+
+
+2025-09-10 11:19:05,518 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2025-09-10 11:19:14,373 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'send_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/transport/plugins/system/ptyprocess.py", line 520, in read
+    s = self.fileobj.read1(size)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/transport/plugins/system/transport.py", line 179, in read
+    buf = self.session.read(65535)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/transport/plugins/system/ptyprocess.py", line 525, in read
+    raise EOFError("End Of File (EOF). Exception style platform.")
+EOFError: End Of File (EOF). Exception style platform.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_scrapli/tasks/core/send_configs.py", line 69, in send_configs
+    scrapli_response = scrapli_conn.send_configs(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/driver/network/sync_driver.py", line 540, in send_configs
+    responses = super().send_commands(
+                ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/driver/generic/sync_driver.py", line 251, in send_commands
+    response = self._send_command(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 307, in decorate
+    result = wrapped_func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/driver/generic/sync_driver.py", line 167, in _send_command
+    raw_response, processed_response = self.channel.send_input(
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/channel/sync_channel.py", line 510, in send_input
+    buf += self._read_until_prompt()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/channel/sync_channel.py", line 146, in _read_until_prompt
+    read_buf.write(self.read())
+                   ^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/channel/sync_channel.py", line 71, in read
+    buf = self.transport.read()
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/transport/plugins/system/transport.py", line 186, in read
+    raise ScrapliConnectionError(msg) from exc
+scrapli.exceptions.ScrapliConnectionError: encountered EOF reading from transport; typically means the device closed the connection
+
+2025-09-10 11:19:14,374 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_nxos/data_center/bgp_config.py", line 12, in load_vars
+    push_ospf(task)
+  File "/workspaces/Nornir/nornir_nxos/data_center/bgp_config.py", line 21, in push_ospf
+    task.run(task=send_configs, configs=configuration)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs (failed)
+
+
+2025-09-10 11:20:45,553 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show run'} on 1 hosts
+2025-09-10 11:22:04,871 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show run'} on 1 hosts
+2025-09-10 11:22:13,687 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2025-09-10 11:22:23,526 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'send_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/transport/plugins/system/ptyprocess.py", line 520, in read
+    s = self.fileobj.read1(size)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/transport/plugins/system/transport.py", line 179, in read
+    buf = self.session.read(65535)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/transport/plugins/system/ptyprocess.py", line 525, in read
+    raise EOFError("End Of File (EOF). Exception style platform.")
+EOFError: End Of File (EOF). Exception style platform.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_scrapli/tasks/core/send_configs.py", line 69, in send_configs
+    scrapli_response = scrapli_conn.send_configs(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/driver/network/sync_driver.py", line 540, in send_configs
+    responses = super().send_commands(
+                ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/driver/generic/sync_driver.py", line 251, in send_commands
+    response = self._send_command(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 307, in decorate
+    result = wrapped_func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/driver/generic/sync_driver.py", line 167, in _send_command
+    raw_response, processed_response = self.channel.send_input(
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/channel/sync_channel.py", line 510, in send_input
+    buf += self._read_until_prompt()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/channel/sync_channel.py", line 146, in _read_until_prompt
+    read_buf.write(self.read())
+                   ^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/channel/sync_channel.py", line 71, in read
+    buf = self.transport.read()
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/transport/plugins/system/transport.py", line 186, in read
+    raise ScrapliConnectionError(msg) from exc
+scrapli.exceptions.ScrapliConnectionError: encountered EOF reading from transport; typically means the device closed the connection
+
+2025-09-10 11:22:23,527 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_nxos/data_center/bgp_config.py", line 12, in load_vars
+    push_ospf(task)
+  File "/workspaces/Nornir/nornir_nxos/data_center/bgp_config.py", line 21, in push_ospf
+    task.run(task=send_configs, configs=configuration)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs (failed)
+
+
+2025-09-10 11:28:20,077 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2025-09-10 11:28:28,900 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'send_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/transport/plugins/system/ptyprocess.py", line 520, in read
+    s = self.fileobj.read1(size)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/transport/plugins/system/transport.py", line 179, in read
+    buf = self.session.read(65535)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/transport/plugins/system/ptyprocess.py", line 525, in read
+    raise EOFError("End Of File (EOF). Exception style platform.")
+EOFError: End Of File (EOF). Exception style platform.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_scrapli/tasks/core/send_configs.py", line 69, in send_configs
+    scrapli_response = scrapli_conn.send_configs(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/driver/network/sync_driver.py", line 540, in send_configs
+    responses = super().send_commands(
+                ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/driver/generic/sync_driver.py", line 251, in send_commands
+    response = self._send_command(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 307, in decorate
+    result = wrapped_func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/driver/generic/sync_driver.py", line 167, in _send_command
+    raw_response, processed_response = self.channel.send_input(
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/channel/sync_channel.py", line 510, in send_input
+    buf += self._read_until_prompt()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/channel/sync_channel.py", line 146, in _read_until_prompt
+    read_buf.write(self.read())
+                   ^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/channel/sync_channel.py", line 71, in read
+    buf = self.transport.read()
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/transport/plugins/system/transport.py", line 186, in read
+    raise ScrapliConnectionError(msg) from exc
+scrapli.exceptions.ScrapliConnectionError: encountered EOF reading from transport; typically means the device closed the connection
+
+2025-09-10 11:28:28,900 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_nxos/data_center/bgp_config.py", line 12, in load_vars
+    push_ospf(task)
+  File "/workspaces/Nornir/nornir_nxos/data_center/bgp_config.py", line 21, in push_ospf
+    task.run(task=send_configs, configs=configuration)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs (failed)
+
+
+2025-09-10 11:30:38,220 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2025-09-10 11:34:58,341 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 1 hosts
+2025-09-10 11:35:07,380 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'send_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/transport/plugins/system/ptyprocess.py", line 520, in read
+    s = self.fileobj.read1(size)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/transport/plugins/system/transport.py", line 179, in read
+    buf = self.session.read(65535)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/transport/plugins/system/ptyprocess.py", line 525, in read
+    raise EOFError("End Of File (EOF). Exception style platform.")
+EOFError: End Of File (EOF). Exception style platform.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_scrapli/tasks/core/send_configs.py", line 69, in send_configs
+    scrapli_response = scrapli_conn.send_configs(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/driver/network/sync_driver.py", line 540, in send_configs
+    responses = super().send_commands(
+                ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/driver/generic/sync_driver.py", line 251, in send_commands
+    response = self._send_command(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 307, in decorate
+    result = wrapped_func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/driver/generic/sync_driver.py", line 167, in _send_command
+    raw_response, processed_response = self.channel.send_input(
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/channel/sync_channel.py", line 510, in send_input
+    buf += self._read_until_prompt()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/channel/sync_channel.py", line 146, in _read_until_prompt
+    read_buf.write(self.read())
+                   ^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/channel/sync_channel.py", line 71, in read
+    buf = self.transport.read()
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/transport/plugins/system/transport.py", line 186, in read
+    raise ScrapliConnectionError(msg) from exc
+scrapli.exceptions.ScrapliConnectionError: encountered EOF reading from transport; typically means the device closed the connection
+
+2025-09-10 11:35:07,381 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'load_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_nxos/data_center/bgp_config.py", line 12, in load_vars
+    push_ospf(task)
+  File "/workspaces/Nornir/nornir_nxos/data_center/bgp_config.py", line 21, in push_ospf
+    task.run(task=send_configs, configs=configuration)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs (failed)
+
+
+2025-09-10 11:46:41,823 -  nornir.core -     INFO -        run() - Running task 'get_cdp' with args {} on 1 hosts
+2025-09-10 11:51:07,694 -  nornir.core -     INFO -        run() - Running task 'get_cdp' with args {} on 1 hosts
+2025-09-10 11:53:02,027 -  nornir.core -     INFO -        run() - Running task 'get_cdp' with args {} on 1 hosts
+2025-09-10 11:53:28,588 -  nornir.core -     INFO -        run() - Running task 'get_cdp' with args {} on 1 hosts
+2025-09-10 11:55:10,200 -  nornir.core -     INFO -        run() - Running task 'get_cdp' with args {} on 1 hosts
+2025-09-10 11:55:14,321 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'get_cdp' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_nxos/data_center/clean_up.py", line 20, in get_cdp
+    cdp_result = task.run(task=send_command, command="shw cdp neighbor | json")
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2025-09-10 11:57:59,658 -  nornir.core -     INFO -        run() - Running task 'get_cdp' with args {} on 1 hosts
+2025-09-10 11:58:03,669 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'get_cdp' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_nxos/data_center/clean_up.py", line 20, in get_cdp
+    cdp_result = task.run(task=send_command, command="shw cdp neighbor | json")
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2025-09-10 11:58:44,738 -  nornir.core -     INFO -        run() - Running task 'get_cdp' with args {} on 1 hosts
+2025-09-10 12:07:59,525 -  nornir.core -     INFO -        run() - Running task 'get_cdp' with args {} on 1 hosts
+2025-09-10 12:08:57,174 -  nornir.core -     INFO -        run() - Running task 'get_cdp' with args {} on 1 hosts
+2025-09-10 12:09:32,340 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show run'} on 1 hosts
+2025-09-10 12:10:16,916 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show run'} on 1 hosts
+2025-09-10 12:10:32,608 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'get_cdp' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_nxos/data_center/clean_up.py", line 23, in get_cdp
+    clean_interfaces(task, interfaces_list)
+  File "/workspaces/Nornir/nornir_nxos/data_center/clean_up.py", line 27, in clean_interfaces
+    task.run(task=send_configs, configs=[f"interface {interfaces}", "switchport", "shutdown", "description SHUTDOWN"])
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs (failed)
+
+
+2025-09-10 12:10:39,250 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show run'} on 1 hosts
+2025-09-10 12:11:24,318 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show run'} on 1 hosts
+2025-09-10 12:11:55,797 -  nornir.core -     INFO -        run() - Running task 'get_cdp' with args {} on 1 hosts
+2025-09-10 12:13:24,238 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'get_cdp' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_nxos/data_center/clean_up.py", line 23, in get_cdp
+    clean_interfaces(task, interfaces_list)
+  File "/workspaces/Nornir/nornir_nxos/data_center/clean_up.py", line 27, in clean_interfaces
+    task.run(task=send_configs, configs=[f"interface {interfaces}", "switchport", "shutdown", "description SHUTDOWN"])
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs (failed)
+
+

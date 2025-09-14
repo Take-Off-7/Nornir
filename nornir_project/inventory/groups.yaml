@@ -1,0 +1,22 @@
+---
+nexus:
+  username: "admin"
+  platform: cisco_nxos
+  connection_options:
+    netmiko:
+      extras:
+        fast_cli: true
+    scrapli:
+      extras:
+        auth_strict_key: false
+
+# cisco:
+#   username: "developer"
+#   password: ##
+#   connection_options:
+#     netmiko:
+#       extras:
+#         fast_cli: true
+#     scrapli:
+#       extras:
+#         auth_strict_key: false

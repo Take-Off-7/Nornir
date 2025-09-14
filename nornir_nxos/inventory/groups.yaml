@@ -1,5 +1,0 @@
----
-nxos:
-  username: "admin"
-  password: ${PASSWORD}
-  platform: nxos

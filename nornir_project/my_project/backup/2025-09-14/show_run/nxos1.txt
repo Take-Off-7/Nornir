@@ -1,0 +1,419 @@
+!Command: show running-config
+!Running configuration last done at: Sat Sep 13 04:17:03 2025
+!Time: Sat Sep 13 04:44:43 2025
+
+version 10.3(3) Bios:version
+hostname nxos
+vdc nxos id 1
+  limit-resource vlan minimum 16 maximum 4094
+  limit-resource vrf minimum 2 maximum 4097
+  limit-resource port-channel minimum 0 maximum 511
+  limit-resource m4route-mem minimum 58 maximum 58
+  limit-resource m6route-mem minimum 8 maximum 8
+
+feature telnet
+feature nxapi
+cfs eth distribute
+feature ospf
+feature bgp
+feature ospfv3
+feature pim
+feature netconf
+feature udld
+feature interface-vlan
+feature hsrp
+feature lacp
+feature dhcp
+feature vpc
+feature lldp
+feature telemetry
+
+logging level interface-vlan 5
+logging level bgp 6
+
+username admin password 5 $5$NOJJKL$mFlw8E8BC4h.LLDDTkBUuHQNtk3MFslr7hqy7j3Rwq5  role network-admin
+ssh key rsa 2048
+ip domain-lookup
+ip domain-name devnet.local
+ip name-server 8.8.8.8 8.8.4.4
+copp profile strict
+snmp-server user admin network-admin auth md5 52036704DA8793EDC8726140EB5216EDEA84 priv aes-128 37462F1D8084C3B9C47C4E72B94807AEF7D2 localizedV2key
+snmp-server host 10.10.20.100 traps version 2c public
+rmon event 1 log trap public description FATAL(1) owner PMON@FATAL
+rmon event 2 log trap public description CRITICAL(2) owner PMON@CRITICAL
+rmon event 3 log trap public description ERROR(3) owner PMON@ERROR
+rmon event 4 log trap public description WARNING(4) owner PMON@WARNING
+rmon event 5 log trap public description INFORMATION(5) owner PMON@INFO
+snmp-server enable traps callhome event-notify
+snmp-server enable traps callhome smtp-send-fail
+snmp-server enable traps cfs state-change-notif
+snmp-server enable traps cfs merge-failure
+snmp-server enable traps aaa server-state-change
+snmp-server enable traps hsrp state-change
+snmp-server enable traps feature-control FeatureOpStatusChange
+snmp-server enable traps sysmgr cseFailSwCoreNotifyExtended
+snmp-server enable traps config ccmCLIRunningConfigChanged
+snmp-server enable traps snmp authentication
+snmp-server enable traps link cisco-xcvr-mon-status-chg
+snmp-server enable traps vtp notifs
+snmp-server enable traps vtp vlancreate
+snmp-server enable traps vtp vlandelete
+snmp-server enable traps bridge newroot
+snmp-server enable traps bridge topologychange
+snmp-server enable traps stpx inconsistency
+snmp-server enable traps stpx root-inconsistency
+snmp-server enable traps stpx loop-inconsistency
+snmp-server enable traps system Clock-change-notification
+snmp-server enable traps feature-control ciscoFeatOpStatusChange
+snmp-server enable traps mmode cseNormalModeChangeNotify
+snmp-server enable traps mmode cseMaintModeChangeNotify
+snmp-server enable traps syslog message-generated
+snmp-server enable traps lldp lldpRemTablesChange
+snmp-server community private group network-admin
+snmp-server community public group network-operator
+
+ip route 0.0.0.0/0 10.10.20.1
+ip route 172.16.0.0/12 10.10.20.1
+ip route 192.168.0.0/16 10.10.20.1
+ipv6 route 0::/0 2001:db8::1
+ipv6 route 0::/0 Vlan20 2001:db8:20::254
+ipv6 route 2001:db8:b:100::/64 2001:db8:20::100
+ip pim ssm range 232.0.0.0/8
+ip routing multicast software-replicate
+vlan 1,4,10,20,100
+vlan 10
+  name Customer_A_VLAN
+vlan 20
+  name Customer_B_VLAN
+vlan 100
+  name Internet_Transit
+
+ip prefix-list CUST_A_PREFIXES seq 10 permit 10.10.100.0/24
+ip prefix-list CUST_A_PREFIXES seq 20 permit 10.10.200.0/24
+ip prefix-list CUST_B_PREFIXES seq 10 permit 10.20.100.0/24
+ip prefix-list CUST_B_PREFIXES seq 20 permit 10.20.200.0/24
+ip prefix-list INET_PREFIXES seq 10 permit 8.8.8.0/24
+ip prefix-list INET_PREFIXES seq 20 permit 1.1.1.0/24
+ipv6 prefix-list INET_PREFIXES_V6 seq 10 permit 2001:4860:4860::/48
+route-map CUST_A_DIRECT permit 10
+  match interface loopback10 Vlan10
+route-map CUST_A_DIRECT_V6 permit 10
+  match interface loopback10 Vlan10
+route-map CUST_A_STATIC permit 10
+  match ip address prefix-list CUST_A_PREFIXES
+route-map CUST_B_DIRECT permit 10
+  match interface loopback20 Vlan20
+route-map CUST_B_DIRECT_V6 permit 10
+  match interface loopback20 Vlan20
+route-map CUST_B_STATIC permit 10
+  match ip address prefix-list CUST_B_PREFIXES
+route-map DIRECT_TO_BGP permit 10
+  match interface loopback0
+route-map DIRECT_TO_BGP_V6 permit 10
+  match interface loopback0
+route-map INET_STATIC permit 10
+  match ip address prefix-list INET_PREFIXES
+route-map INET_STATIC_V6 permit 10
+  match ipv6 address prefix-list INET_PREFIXES_V6
+service dhcp
+ip dhcp relay
+ipv6 dhcp relay
+vrf context CUSTOMER_A
+  description Customer A VRF for testing
+  ip route 0.0.0.0/0 Vlan10 10.10.1.254
+  ip route 10.10.100.0/24 10.10.1.100
+  ipv6 route 0::/0 Vlan10 2001:db8:10::254
+  ipv6 route 2001:db8:a:100::/64 2001:db8:10::100
+  rd auto
+  address-family ipv4 unicast
+  address-family ipv6 unicast
+vrf context CUSTOMER_B
+  description Customer B VRF for testing
+  ip route 0.0.0.0/0 Vlan20 10.20.1.254
+  ip route 10.20.100.0/24 10.20.1.100
+  rd auto
+  address-family ipv4 unicast
+  address-family ipv6 unicast
+vrf context INTERNET_VRF
+  description Internet/Transit VRF
+  ip route 0.0.0.0/0 Vlan100 192.168.100.254
+  ipv6 route 0::/0 Vlan100 2001:db8:100::254
+vrf context MPOD-IPN
+  ip pim rp-address 44.1.1.1 group-list 225.0.0.0/15 bidir
+  ip pim rp-address 44.1.1.1 group-list 239.255.255.240/28 bidir
+  ip pim ssm range 232.0.0.0/8
+vrf context management
+  ip route 0.0.0.0/0 10.1.1.252
+  ip route 0.0.0.0/0 10.1.1.254
+  ip route 0.0.0.0/0 10.10.20.254
+
+
+interface Vlan1
+
+interface Vlan10
+  description Customer A SVI
+  vrf member CUSTOMER_A
+  ip address 10.10.1.1/24
+  ipv6 address 2001:db8:10::1/64
+  hsrp 10
+    ip 10.10.1.254
+
+interface Vlan20
+  description Customer B SVI
+  vrf member CUSTOMER_B
+
+interface Vlan100
+  description Internet Transit SVI
+  no shutdown
+  vrf member INTERNET_VRF
+  ip address 172.16.100.1/24
+  ipv6 address 2001:db8:100::1/64
+
+interface Vlan999
+  description Management SVI
+  ip address 172.16.255.1/24
+  ipv6 address 2001:db8:999::1/64
+
+interface port-channel1
+  description LAG Interface for testing
+  switchport mode trunk
+  switchport trunk allowed vlan 10,20,100,999
+  spanning-tree port type network
+
+interface Ethernet1/1
+  description Active Interface - Customer A Access
+  switchport access vlan 10
+  spanning-tree port type edge
+
+interface Ethernet1/2
+  description Active Interface - Customer B Access
+
+interface Ethernet1/3
+  description Active Interface - Internet Transit
+  switchport access vlan 100
+  spanning-tree port type edge
+
+interface Ethernet1/4
+  description Port-Channel Member 1
+  switchport mode trunk
+  switchport trunk allowed vlan 10,20,100,999
+  channel-group 1 mode active
+
+interface Ethernet1/5
+  description Port-Channel Member 2
+  switchport mode trunk
+  switchport trunk allowed vlan 10,20,100,999
+  channel-group 1 mode active
+
+interface Ethernet1/6
+  description Trunk Interface
+  switchport mode trunk
+  switchport trunk allowed vlan 10,20,100,999
+
+interface Ethernet1/7
+
+interface Ethernet1/8
+
+interface Ethernet1/9
+
+interface Ethernet1/10
+
+interface Ethernet1/11
+
+interface Ethernet1/12
+
+interface Ethernet1/13
+
+interface Ethernet1/14
+
+interface Ethernet1/15
+
+interface Ethernet1/16
+
+interface Ethernet1/17
+
+interface Ethernet1/18
+
+interface Ethernet1/19
+
+interface Ethernet1/20
+
+interface Ethernet1/21
+
+interface Ethernet1/22
+  description To ACI SIPINE4-eth 1/32
+  no switchport
+  mtu 9150
+  no shutdown
+
+interface Ethernet1/22.4
+  mtu 9150
+  encapsulation dot1q 4
+  vrf member MPOD-IPN
+  ip address 172.16.101.1/30
+  ip ospf network point-to-point
+  ip router ospf 1 area 0.0.0.0
+  ip pim sparse-mode
+  ip dhcp relay address 20.0.0.1
+  no shutdown
+
+interface Ethernet1/23
+  description To ACI SIPINE3-eth 1/32
+  no switchport
+  mtu 9150
+  no shutdown
+
+interface Ethernet1/23.4
+  description To ACI SIPINE4- eth 1/32 vlan4
+  mtu 9150
+  encapsulation dot1q 4
+  vrf member MPOD-IPN
+  ip address 172.16.101.5/30
+  ip ospf network point-to-point
+  ip router ospf 1 area 0.0.0.0
+  ip pim sparse-mode
+  ip dhcp relay address 20.0.0.1
+  no shutdown
+
+interface Ethernet1/24
+
+interface Ethernet1/25
+
+interface Ethernet1/26
+
+interface Ethernet1/27
+
+interface Ethernet1/28
+
+interface Ethernet1/29
+
+interface Ethernet1/30
+
+interface Ethernet1/31
+
+interface Ethernet1/32
+
+interface Ethernet1/33
+  description No one was here.
+
+interface Ethernet1/34
+
+interface Ethernet1/35
+
+interface Ethernet1/36
+
+interface Ethernet1/37
+
+interface Ethernet1/38
+
+interface Ethernet1/39
+
+interface Ethernet1/40
+
+interface Ethernet1/41
+
+interface Ethernet1/42
+
+interface Ethernet1/43
+
+interface Ethernet1/44
+
+interface Ethernet1/45
+
+interface Ethernet1/46
+
+interface Ethernet1/47
+
+interface Ethernet1/48
+
+interface Ethernet1/49
+
+interface Ethernet1/50
+
+interface Ethernet1/51
+
+interface Ethernet1/52
+
+interface Ethernet1/53
+
+interface Ethernet1/54
+
+interface Ethernet1/55
+
+interface Ethernet1/56
+
+interface Ethernet1/57
+
+interface Ethernet1/58
+
+interface Ethernet1/59
+
+interface Ethernet1/60
+
+interface Ethernet1/61
+
+interface Ethernet1/62
+
+interface Ethernet1/63
+
+interface Ethernet1/64
+
+interface mgmt0
+  vrf member management
+  ip address 10.10.20.95/24
+
+interface loopback0
+  description Management Loopback
+  ip address 10.255.255.1/32
+  ipv6 address 2001:db8:ffff::1/128
+
+interface loopback4
+  description Loopback for MPOD OSPF
+  vrf member MPOD-IPN
+  ip address 44.1.1.1/32
+  ip ospf network point-to-point
+  ip router ospf 1 area 0.0.0.0
+  ip pim sparse-mode
+
+interface loopback10
+  description Customer A Loopback
+  vrf member CUSTOMER_A
+  ip address 10.10.10.1/32
+  ipv6 address 2001:db8:a::1/128
+
+interface loopback20
+  description Customer B Loopback
+  vrf member CUSTOMER_B
+  ip address 10.20.20.1/32
+  ipv6 address 2001:db8:b::1/128
+
+interface loopback100
+  description Internet VRF Loopback
+  vrf member INTERNET_VRF
+icam monitor scale
+
+line console
+  exec-timeout 0
+  terminal width  511
+line vty
+boot nxos bootflash:/nxos64-cs.10.3.3.F.bin
+router ospf 1
+  vrf MPOD-IPN
+    router-id 44.1.1.1
+router bgp 65001
+  router-id 10.255.255.1
+  bestpath as-path multipath-relax
+  reconnect-interval 12
+  log-neighbor-changes
+  address-family ipv4 unicast
+    redistribute direct route-map DIRECT_TO_BGP
+    maximum-paths 4
+  address-family ipv6 unicast
+    redistribute direct route-map DIRECT_TO_BGP_V6
+    maximum-paths 4
+  neighbor 10.255.255.2
+    remote-as 65002
+    description Simulated BGP Peer 1
+
+logging server 10.10.20.100
+no logging console

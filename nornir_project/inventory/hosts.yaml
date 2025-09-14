@@ -1,0 +1,30 @@
+---
+nxos1:
+  hostname: sbx-nxos-mgmt.cisco.com
+  password: ##
+  nxos_server: 10.0.0.1
+  extras:
+    strict_key: False
+  groups:
+    - nexus
+
+# nexus9k:
+#   hostname: 10.10.20.40
+#   password: ##
+#   groups:
+#     - cisco
+#     - nexus
+
+# cat8k:
+#   hostname: 10.10.20.48
+#   platform: cisco_ios
+#   groups:
+#     - cisco
+
+# iosxr:
+#   hostname: 10.10.20.35
+#   platform: cisco_xr
+#   groups:
+#     - cisco
+#     - nexus
+

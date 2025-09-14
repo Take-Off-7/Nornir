@@ -14,7 +14,7 @@ def show_version(task):
     print(f"{task.host.name} - Hostname: {facts['hostname']}, OS Version: {facts['os_version']}")
 
 def main():
-    nr = InitNornir(config_file="config.yml")
+    nr = InitNornir(config_file="../config.yaml")
     result = nr.run(task=show_version)
     print_result(result)
 
