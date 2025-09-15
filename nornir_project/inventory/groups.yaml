@@ -8,7 +8,11 @@ nexus:
         fast_cli: true
     scrapli:
       extras:
+        auth_strict_key: false   
+    scrapli_netconf:
+      extras:
         auth_strict_key: false
+        ssh_config_file: false
 
 # cisco:
 #   username: "developer"

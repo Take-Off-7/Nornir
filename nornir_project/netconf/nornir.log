@@ -1,0 +1,515 @@
+2025-09-15 12:57:12,186 -  nornir.core -     INFO -        run() - Running task 'get_device_config' with args {} on 1 hosts
+2025-09-15 12:57:12,187 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: netconf_get_config() got an unexpected keyword argument 'filters'
+
+2025-09-15 12:57:12,188 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'get_device_config' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_project/netconf/run1.py", line 13, in get_device_config
+    task.run(task=netconf_get_config, source="running", filter_type="subtree", filters=filter)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2025-09-15 12:58:38,331 -  nornir.core -     INFO -        run() - Running task 'get_device_config' with args {} on 1 hosts
+2025-09-15 12:58:38,332 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'get_device_config' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_project/netconf/run1.py", line 13, in get_device_config
+    task.run(task=netconf_get_config, source="running", filter_type="subtree", filter_=filter_)
+                                                                                       ^^^^^^^
+NameError: name 'filter_' is not defined. Did you mean: 'filter'?
+
+2025-09-15 12:58:48,063 -  nornir.core -     INFO -        run() - Running task 'get_device_config' with args {} on 1 hosts
+2025-09-15 12:58:55,093 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_scrapli/tasks/netconf/get_config.py", line 32, in netconf_get_config
+    scrapli_conn = task.host.get_connection("scrapli_netconf", task.nornir.config)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_scrapli/connection.py", line 288, in open
+    connection.open()
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli_netconf/driver/sync_driver.py", line 118, in open
+    self.channel.channel_authenticate_netconf(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli_netconf/channel/sync_channel.py", line 120, in channel_authenticate_netconf
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2025-09-15 12:58:55,094 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'get_device_config' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_project/netconf/run1.py", line 13, in get_device_config
+    task.run(task=netconf_get_config, source="running", filter_type="subtree", filter_=filter)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2025-09-15 13:02:36,452 -  nornir.core -     INFO -        run() - Running task 'get_device_config' with args {} on 1 hosts
+2025-09-15 13:02:42,784 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_scrapli/tasks/netconf/get_config.py", line 32, in netconf_get_config
+    scrapli_conn = task.host.get_connection("scrapli_netconf", task.nornir.config)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_scrapli/connection.py", line 288, in open
+    connection.open()
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli_netconf/driver/sync_driver.py", line 118, in open
+    self.channel.channel_authenticate_netconf(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli_netconf/channel/sync_channel.py", line 120, in channel_authenticate_netconf
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2025-09-15 13:02:42,784 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'get_device_config' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_project/netconf/run1.py", line 13, in get_device_config
+    task.run(task=netconf_get_config, source="running", filter_type="subtree", filter_=filter)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2025-09-15 13:04:50,701 -  nornir.core -     INFO -        run() - Running task 'get_device_config' with args {} on 1 hosts
+2025-09-15 13:04:56,675 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_scrapli/tasks/netconf/get_config.py", line 32, in netconf_get_config
+    scrapli_conn = task.host.get_connection("scrapli_netconf", task.nornir.config)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_scrapli/connection.py", line 288, in open
+    connection.open()
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli_netconf/driver/sync_driver.py", line 118, in open
+    self.channel.channel_authenticate_netconf(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli_netconf/channel/sync_channel.py", line 120, in channel_authenticate_netconf
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2025-09-15 13:04:56,675 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'get_device_config' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_project/netconf/run1.py", line 13, in get_device_config
+    task.run(task=netconf_get_config, source="running", filter_type="subtree", filter_=filter)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2025-09-15 13:05:32,618 -  nornir.core -     INFO -        run() - Running task 'get_device_config' with args {} on 1 hosts
+2025-09-15 13:05:38,777 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_scrapli/tasks/netconf/get_config.py", line 32, in netconf_get_config
+    scrapli_conn = task.host.get_connection("scrapli_netconf", task.nornir.config)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_scrapli/connection.py", line 288, in open
+    connection.open()
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli_netconf/driver/sync_driver.py", line 118, in open
+    self.channel.channel_authenticate_netconf(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli_netconf/channel/sync_channel.py", line 120, in channel_authenticate_netconf
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2025-09-15 13:05:38,777 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'get_device_config' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_project/netconf/run1.py", line 13, in get_device_config
+    task.run(task=netconf_get_config, source="running", filter_type="subtree", filter_=filter)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2025-09-15 13:07:19,181 -  nornir.core -     INFO -        run() - Running task 'get_device_config' with args {} on 1 hosts
+2025-09-15 13:07:19,182 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: netconf_get_config() got an unexpected keyword argument 'connection_name'
+
+2025-09-15 13:07:19,183 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'get_device_config' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_project/netconf/run1.py", line 13, in get_device_config
+    task.run(task=netconf_get_config, source="running", filter_type="subtree", filter_=filter, connection_name="scrapli_netconf")
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2025-09-15 13:08:17,029 -  nornir.core -     INFO -        run() - Running task 'get_device_config' with args {} on 1 hosts
+2025-09-15 13:08:22,871 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_scrapli/tasks/netconf/get_config.py", line 32, in netconf_get_config
+    scrapli_conn = task.host.get_connection("scrapli_netconf", task.nornir.config)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_scrapli/connection.py", line 288, in open
+    connection.open()
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli_netconf/driver/sync_driver.py", line 118, in open
+    self.channel.channel_authenticate_netconf(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli_netconf/channel/sync_channel.py", line 120, in channel_authenticate_netconf
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2025-09-15 13:08:22,871 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'get_device_config' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_project/netconf/run1.py", line 13, in get_device_config
+    task.run(task=netconf_get_config, source="running", filter_type="subtree", filter_=filter)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2025-09-15 13:10:58,725 -  nornir.core -     INFO -        run() - Running task 'get_device_config' with args {} on 1 hosts
+2025-09-15 13:11:04,888 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'get_device_config' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_project/netconf/run1.py", line 29, in get_device_config
+    conn = task.host.get_connection("scrapli_netconf", task.nornir.config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_scrapli/connection.py", line 288, in open
+    connection.open()
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli_netconf/driver/sync_driver.py", line 118, in open
+    self.channel.channel_authenticate_netconf(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli_netconf/channel/sync_channel.py", line 120, in channel_authenticate_netconf
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2025-09-15 13:16:41,427 -  nornir.core -     INFO -        run() - Running task 'get_device_config' with args {} on 1 hosts
+2025-09-15 13:16:47,372 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_scrapli/tasks/netconf/get_config.py", line 32, in netconf_get_config
+    scrapli_conn = task.host.get_connection("scrapli_netconf", task.nornir.config)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_scrapli/connection.py", line 288, in open
+    connection.open()
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli_netconf/driver/sync_driver.py", line 118, in open
+    self.channel.channel_authenticate_netconf(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli_netconf/channel/sync_channel.py", line 120, in channel_authenticate_netconf
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2025-09-15 13:16:47,373 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'get_device_config' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_project/netconf/run1.py", line 17, in get_device_config
+    task.run(task=netconf_get_config, source="running", filter_type="subtree", filter_=filter)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2025-09-15 14:40:33,874 -  nornir.core -     INFO -        run() - Running task 'get_device_config' with args {} on 1 hosts
+2025-09-15 14:40:39,449 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_scrapli/tasks/netconf/get_config.py", line 32, in netconf_get_config
+    scrapli_conn = task.host.get_connection("scrapli_netconf", task.nornir.config)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_scrapli/connection.py", line 288, in open
+    connection.open()
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli_netconf/driver/sync_driver.py", line 118, in open
+    self.channel.channel_authenticate_netconf(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli_netconf/channel/sync_channel.py", line 120, in channel_authenticate_netconf
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2025-09-15 14:40:39,450 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'get_device_config' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_project/netconf/run1.py", line 20, in get_device_config
+    task.run(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2025-09-15 14:43:03,077 -  nornir.core -     INFO -        run() - Running task 'get_device_config' with args {} on 1 hosts
+2025-09-15 14:43:35,749 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli_netconf/channel/sync_channel.py", line 308, in send_input_netconf
+    buf = self._read_until_prompt(buf=buf)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/channel/sync_channel.py", line 146, in _read_until_prompt
+    read_buf.write(self.read())
+                   ^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli_netconf/channel/sync_channel.py", line 228, in read
+    buf = self.transport.read()
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 110, in _multiprocessing_timeout
+    return _handle_timeout(
+           ^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 142, in _handle_timeout
+    raise ScrapliTimeout(message)
+scrapli.exceptions.ScrapliTimeout: timed out reading from transport
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_scrapli/tasks/netconf/get_config.py", line 33, in netconf_get_config
+    scrapli_response = scrapli_conn.get_config(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli_netconf/driver/sync_driver.py", line 176, in get_config
+    raw_response = self.channel.send_input_netconf(response.channel_input)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli_netconf/channel/sync_channel.py", line 317, in send_input_netconf
+    raise ScrapliTimeout from exc
+scrapli.exceptions.ScrapliTimeout
+
+2025-09-15 14:43:35,749 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'get_device_config' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_project/netconf/run1.py", line 13, in get_device_config
+    task.run(task=netconf_get_config, source="running", filter_type="subtree", filter_=filter)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2025-09-15 14:45:42,145 -  nornir.core -     INFO -        run() - Running task 'get_device_config' with args {} on 1 hosts
+2025-09-15 14:46:14,817 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli_netconf/channel/sync_channel.py", line 308, in send_input_netconf
+    buf = self._read_until_prompt(buf=buf)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/channel/sync_channel.py", line 146, in _read_until_prompt
+    read_buf.write(self.read())
+                   ^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli_netconf/channel/sync_channel.py", line 228, in read
+    buf = self.transport.read()
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 110, in _multiprocessing_timeout
+    return _handle_timeout(
+           ^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli/decorators.py", line 142, in _handle_timeout
+    raise ScrapliTimeout(message)
+scrapli.exceptions.ScrapliTimeout: timed out reading from transport
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir_scrapli/tasks/netconf/get_config.py", line 33, in netconf_get_config
+    scrapli_response = scrapli_conn.get_config(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli_netconf/driver/sync_driver.py", line 176, in get_config
+    raw_response = self.channel.send_input_netconf(response.channel_input)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/scrapli_netconf/channel/sync_channel.py", line 317, in send_input_netconf
+    raise ScrapliTimeout from exc
+scrapli.exceptions.ScrapliTimeout
+
+2025-09-15 14:46:14,819 - nornir.core.task -    ERROR -      start() - Host 'nxos1': task 'get_device_config' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/Nornir/nornir_project/netconf/run1.py", line 13, in get_device_config
+    task.run(task=netconf_get_config, source="running", filter_type="subtree", filter_=filter)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
